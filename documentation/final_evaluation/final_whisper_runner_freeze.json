@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-09-12T17:08:40.988422",
+  "purpose": "frozen held-out Whisper Large-v3 inference runner",
+  "runner_path": "scripts/final_evaluation/run_final_whisper.py",
+  "runner_sha256": "a629d7373607ce8c1138667d8e80909b340a84811e3ff6f35d45ac7b16d5abce",
+  "frozen_configuration": {
+    "model": "Whisper Large-v3",
+    "implementation": "faster-whisper",
+    "faster_whisper_version": "1.2.1",
+    "jiwer_version": "4.0.0",
+    "device": "cuda",
+    "compute_type": "float16",
+    "language": "en",
+    "beam_size": 5,
+    "vad_filter": true,
+    "word_timestamps": true,
+    "condition_on_previous_text": true
+  },
+  "current_runtime_status": "GPU unavailable — runner NOT executed",
+  "final_test_inference_started": false
+}

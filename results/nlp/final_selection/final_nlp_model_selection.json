@@ -1,0 +1,47 @@
+{
+  "selected_model": "Qwen/Qwen3-8B",
+  "selection_status": "FINAL",
+  "pipeline": "Whisper Large-v3 transcript -> Qwen3-8B clinical fact extraction -> deterministic validation/post-processing -> canonical clinical JSON",
+  "qwen_configuration": {
+    "thinking_enabled": false,
+    "structured_output": "JSON",
+    "target_facts_per_consultation": "15-20"
+  },
+  "full_pilot_results": {
+    "consultations": 10,
+    "valid_json": "10/10",
+    "average_facts_extracted": 19.8,
+    "average_raw_evidence_grounding_percent": 68.92,
+    "average_canonical_evidence_grounding_percent": 97.39,
+    "total_generation_seconds": 291.78,
+    "full_batch_wall_seconds": 414.56
+  },
+  "gold_fact_evaluation": {
+    "gold_facts": 150,
+    "final_detected_facts": 115,
+    "overall_clinical_fact_recall_percent": 76.67,
+    "critical_facts": 85,
+    "critical_facts_detected": 69,
+    "critical_fact_recall_percent": 81.18,
+    "negated_facts": 25,
+    "negated_facts_detected": 11,
+    "negation_recall_percent": 44.0
+  },
+  "evidence_adjudication": {
+    "automatically_flagged_items": 5,
+    "supported_after_manual_review": 5,
+    "confirmed_unsupported_among_flagged": 0,
+    "important_note": "This does not establish a global zero hallucination rate. It only means all five automatically unresolved evidence cases were manually confirmed as supported."
+  },
+  "medgemma_comparison": {
+    "model": "google/medgemma-1.5-4b-it",
+    "successful_compact_test_json_valid": true,
+    "successful_compact_test_facts": 43,
+    "successful_compact_test_evidence_grounding_percent": 90.7,
+    "successful_compact_test_generation_seconds": 133.18,
+    "observed_issue": "Structured generation was less stable and more verbose; other prompt variants reached output-token limits or introduced categorization problems."
+  },
+  "selection_reason": "Qwen3-8B was selected because it produced stable valid JSON, was substantially faster in compatibility testing, supported thinking-disabled generation, and integrated cleanly with the deterministic grounding and validation layer.",
+  "important_limitation": "Negation recall was 44%, so human review remains necessary before approval of the final medical record.",
+  "next_stage": "Generate structured SOAP medical records from canonical clinical JSON and implement human-in-the-loop review."
+}

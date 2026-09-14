@@ -1,0 +1,12 @@
+{
+  "selected_model": "Whisper Large-v3",
+  "selection_status": "FINAL",
+  "dataset": "PriMock57 pilot evaluation set",
+  "consultations": 10,
+  "audio_minutes": 90.86,
+  "reference_words": 16598,
+  "clinical_gold_facts": 150,
+  "reason": "Whisper Large-v3 achieved the lowest corpus WER and the highest overall and critical clinical-fact preservation, with the fewest critical omissions.",
+  "important_limitation": "Negation recall was 84%, therefore transcript visibility and human review remain required before final approval.",
+  "next_pipeline_stage": "Clinical information extraction and structured medical record generation"
+}

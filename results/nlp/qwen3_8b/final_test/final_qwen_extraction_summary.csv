@@ -1,0 +1,18 @@
+consultation_id,model,dtype,thinking_enabled,do_sample,max_new_tokens,input_tokens,generated_tokens,generation_seconds,peak_gpu_gb,json_valid,json_error,raw_facts,canonical_facts,status_corrections,quote_repairs,invalid_or_rejected_items,transcript_sha256
+day1_consultation03,Qwen/Qwen3-8B,bfloat16,False,False,2200,2679,1203,28.6421,15.9241,True,,19,19,0,10,0,77571bde6f41332f820d8669a7a527bed7380b44c11ffbfb7b44d86ebb7f702f
+day1_consultation04,Qwen/Qwen3-8B,bfloat16,False,False,2200,2490,1380,31.964,15.8835,True,,20,20,0,8,0,33969bdb24faffbfe1fce3a442418abdebb7860b0a77f5fac0b0a572afd2a8c8
+day1_consultation08,Qwen/Qwen3-8B,bfloat16,False,False,2200,2118,1176,27.2585,15.7926,True,,19,19,3,5,0,eee6a848ac12cb42a15fbccdf395f90188c27a096fd85105e03157de24c2294e
+day1_consultation09,Qwen/Qwen3-8B,bfloat16,False,False,2200,2684,1176,27.6642,15.925,True,,20,20,3,3,0,8511a9efc6286feda0270c8bb631cc54057f46463f678c3e9e148d097fd6c0d6
+day1_consultation10,Qwen/Qwen3-8B,bfloat16,False,False,2200,2433,1269,29.6682,15.8654,True,,20,20,3,1,0,07dbe5002f23f39d2c4b91b54b00a4ed500653f52f3908a7fab02511ca9783f6
+day1_consultation11,Qwen/Qwen3-8B,bfloat16,False,False,2200,3824,1317,30.8984,16.1962,True,,20,20,0,7,0,80501f6b1dd382d737505a02cb27b98b6e2455f992a1eeff9d98c6e844f77dfe
+day2_consultation02,Qwen/Qwen3-8B,bfloat16,False,False,2200,2399,1522,35.6407,15.8573,True,,18,18,1,3,0,0e5f5cc866fc80ad9728cc497bf54617a0a5aa2b9a334129a99b060c82d72730
+day2_consultation03,Qwen/Qwen3-8B,bfloat16,False,False,2200,2330,2200,50.9188,15.92,False,"Expecting ',' delimiter: line 108 column 6 (char 3413)",0,0,0,0,0,e06313fd2e82355728052477c037e0830daa9a2a7bc3723861e50a1168d3b586
+day2_consultation04,Qwen/Qwen3-8B,bfloat16,False,False,2200,2862,1211,28.2388,15.9679,True,,20,20,0,5,0,651d79ef0f6032c8bb4683cc04c02dc528106798060df26c8ed80d7874780436
+day2_consultation06,Qwen/Qwen3-8B,bfloat16,False,False,2200,2673,1099,25.4007,15.9227,True,,19,19,0,7,0,c7514ec396d186cdf4c83fd30625b802f7c71b5c255c296e5110b3befd67bf10
+day2_consultation07,Qwen/Qwen3-8B,bfloat16,False,False,2200,2164,1076,25.0168,15.8054,True,,20,20,1,2,0,4fdfa59c2449736ea939c1a241891df8a7732eae7745c715adaaa3249e2e9c7d
+day3_consultation08,Qwen/Qwen3-8B,bfloat16,False,False,2200,1601,1114,26.0692,15.6696,True,,18,18,1,1,0,5628d61d2a2ffb5bb693bdafb034b576270f97ceb07d596cf48711a0ea87fb21
+day4_consultation07,Qwen/Qwen3-8B,bfloat16,False,False,2200,2660,1182,27.192,15.92,True,,20,20,1,5,0,d0825c048e28a5736dcece986676cf564553a03ca41236afc8f493e3e6463f76
+day5_consultation01,Qwen/Qwen3-8B,bfloat16,False,False,2200,2094,1210,28.0497,15.785,True,,20,20,3,5,0,0fad8cff3e1e50a746c64006eed482cdcf62eee045ac47ac0c5f08f76663bd1a
+day5_consultation05,Qwen/Qwen3-8B,bfloat16,False,False,2200,1504,909,21.1115,15.648,True,,16,16,2,1,0,9fba3f7714b686d52031f2eff04720f112641aaa1642bec46a313ca7b4f03516
+day5_consultation06,Qwen/Qwen3-8B,bfloat16,False,False,2200,2415,1096,25.3511,15.8611,True,,19,19,0,0,0,5c30c230332b0b6c17565a979f50afb0d56b0ec12b96a1738bf9b6b1a2ce32ad
+day5_consultation09,Qwen/Qwen3-8B,bfloat16,False,False,2200,2197,1137,26.1881,15.81,True,,20,20,0,4,0,7654be60d205ad3a97a0872aa46281885977142c5c7037d6ec8bc8e59acd8de3

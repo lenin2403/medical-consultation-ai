@@ -1,0 +1,11 @@
+consultation_id,source_facts,referenced_facts,fact_coverage_percent,missing_facts,wrong_section_references
+day1_consultation01,20,20,100.0,0,0
+day1_consultation07,20,20,100.0,0,0
+day2_consultation01,20,20,100.0,0,0
+day2_consultation05,20,20,100.0,0,0
+day3_consultation06,19,11,57.89,8,0
+day3_consultation09,20,20,100.0,0,9
+day4_consultation03,20,13,65.0,7,0
+day4_consultation10,19,19,100.0,0,0
+day5_consultation03,20,19,95.0,1,0
+day5_consultation12,20,20,100.0,0,4

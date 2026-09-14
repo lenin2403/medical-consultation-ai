@@ -1,0 +1,35 @@
+FINAL QWEN3-8B HELD-OUT CLINICAL EXTRACTION EVALUATION
+
+Structured JSON success:
+16 / 17 = 94.12%
+
+Canonical facts:
+308
+
+Exact evidence grounding:
+308 / 308 = 100.00%
+
+Representative manual clinical review:
+Consultations = 6
+Extracted facts reviewed = 117
+Reference facts = 156
+
+TP = 92
+FP = 25
+FN = 64
+
+Precision = 78.63%
+Recall = 58.97%
+F1 = 67.40%
+
+Clinically meaningful semantic errors = 2
+Wrong polarity errors = 1
+Partially unsupported overgeneralizations = 1
+Fully fabricated hallucinations = 0
+
+Important limitation:
+Precision / recall / F1 are conservative clinician-note
+agreement metrics because clinician notes are not exhaustive
+representations of every valid transcript fact.
+
+Human review remains required before final approval.

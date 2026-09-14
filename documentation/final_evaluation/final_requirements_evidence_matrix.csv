@@ -1,0 +1,34 @@
+id,area,requirement,official_priority,status,evidence,remaining_action
+R01,Application,Working web application for medical consultation documentation,Required,DONE,app/app.py,Final acceptance test only
+R02,Audio,Accept uploaded consultation audio,Required,DONE,app/app.py,Final acceptance test
+R03,Audio,Allow consultation recording through the application,Required,DONE,app/app.py,Final acceptance test
+R04,ASR,Automatic speech recognition transcription,Required,DONE,app/live_pipeline.py,Held-out final ASR evaluation
+R05,ASR,Evaluate candidate ASR models,Required,DONE,results/asr/,Consolidate comparison into final report
+R06,ASR,Evaluate transcription accuracy using WER and error analysis,Required,PARTIAL,results/asr/whisper_large_v3/expanded_t4_baseline/,Run frozen 17-case final held-out evaluation
+R07,Clinical NLP,Extract clinically relevant information from transcript,Required,DONE,app/live_clinical_pipeline.py,Final quantitative evaluation
+R08,Clinical NLP,"Capture complaint, symptoms, history, medication, allergies and other clinical facts",Required,DONE,app/live_clinical_pipeline.py,Measure completeness on final evaluation cases
+R09,Clinical NLP,"Capture clinician-side assessment, plan, follow-up or referral when documented",Required,PARTIAL,app/live_clinical_pipeline.py,Evaluate frozen extraction behaviour; known development case initially required targeted plan extraction
+R10,Clinical NLP,Evidence-ground extracted clinical facts,Research safeguard,DONE,results/nlp/; app/live_clinical_pipeline.py,Report final grounding / hallucination results
+R11,Clinical NLP,"Evaluate extraction precision, recall and F1",Exposé evaluation,PENDING,documentation/final_evaluation/final_evaluation_protocol.json,Perform final clinical extraction evaluation
+R12,Structured Record,Generate a structured standardized medical record,Required,DONE,app/live_clinical_pipeline.py,Final evaluation
+R13,Structured Record,"Generate SOAP Subjective, Objective, Assessment and Plan sections",Accepted structure,DONE,app/live_clinical_pipeline.py,Evaluate section placement and completeness
+R14,Safety,Do not fabricate undocumented SOAP information,Safety requirement,DONE,Development encounter 20260912_100338_day4_consultation08_mixed_bea00391,Quantify unsupported content in final evaluation
+R15,Human Review,Allow transcript review and editing,Required,DONE,app/app.py,Final acceptance test
+R16,Human Review,"Allow clinical facts to be edited, added or removed",Required,DONE,app/app.py,Final acceptance test
+R17,Human Review,Allow structured medical record / SOAP editing,Required,DONE,app/app.py,Final acceptance test
+R18,Human Review,Move information between record sections,Required,VERIFY,app/app.py,Explicitly verify UI behaviour before final report
+R19,Human Review,Require human approval before final export/storage,Required,DONE,app/live_pipeline.py; app/app.py,Final acceptance test
+R20,Auditability,Preserve original AI output separately from reviewed/final output,Required,DONE,results/live_encounters/20260912_100338_day4_consultation08_mixed_bea00391/,Document architecture in report
+R21,Auditability,Record human corrections,Required,DONE,results/live_encounters/,Summarize correction types during HITL evaluation
+R22,Export,Export approved medical record as JSON,Required by exposé,DONE,results/live_encounters/20260912_100338_day4_consultation08_mixed_bea00391/exports/approved_medical_record.json,Final acceptance test
+R23,Export,Export approved medical record as PDF,Required by exposé,DONE,results/live_encounters/20260912_100338_day4_consultation08_mixed_bea00391/exports/approved_medical_record.pdf,Final acceptance test
+R24,Interoperability,Consider HL7 FHIR interoperability,Should be considered / optional simplified implementation,PARTIAL,Project architecture / exposé,Document FHIR mapping and future integration; optional simplified export if time permits
+R25,Privacy,Use public/simulated data and document privacy assumptions,Required,DONE,PRI-MOCK57 dataset; application prototype warning,Write final privacy section
+R26,Safety,Clearly identify application as research prototype and not autonomous medical advice,Required,DONE,app/app.py; exported PDF,Include screenshots/report explanation
+R27,Evaluation,Evaluate hallucination risk and missing clinical information,Required / exposé,PARTIAL,Pilot clinical fact and SOAP evaluation results,Perform frozen final clinical evaluation
+R28,Evaluation,Evaluate latency / response time,Required / exposé,PARTIAL,Development ASR and live pipeline timings,Add final held-out ASR and LLM timings
+R29,Evaluation,Evaluate human-in-the-loop correction and approval workflow,Required / exposé,PARTIAL,Successful development encounter and review/approval workflow,Perform final structured HITL/usability assessment
+R30,Deployment,Working demonstrable application,Required,DONE,Streamlit application with temporary tunnel deployment,Document deployment limitations and demo recovery plan
+R31,Deployment,Permanent production deployment,Not explicitly required,NOT_REQUIRED,Not an official mandatory deliverable,Discuss Data Lab / production deployment as future work
+R32,Documentation,Document source code and architecture,Required,PARTIAL,documentation/project_freezes/; app source files,Final README and architecture documentation
+R33,Documentation,"Technical final report covering architecture, model selection, evaluation, privacy and limitations",Required,PENDING,Final report not yet written,Write final report after evaluation results are complete

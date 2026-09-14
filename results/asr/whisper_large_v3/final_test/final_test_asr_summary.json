@@ -1,0 +1,52 @@
+{
+  "evaluation_name": "PRI-MOCK57 held-out final ASR evaluation",
+  "created_at": "2026-09-12T21:17:06.572317",
+  "model": "Whisper Large-v3",
+  "implementation": "faster-whisper",
+  "jiwer_version": "4.0.0",
+  "locked_final_test_cases": 17,
+  "successfully_scored_cases": 17,
+  "failed_or_missing_cases": 0,
+  "primary_metrics": {
+    "corpus_wer": 0.18070354692745585,
+    "corpus_wer_percent": 18.070354692745585,
+    "macro_wer": 0.18234303390469045,
+    "macro_wer_percent": 18.234303390469044,
+    "median_wer": 0.18029350104821804,
+    "median_wer_percent": 18.029350104821802,
+    "min_wer": 0.13341443633414438,
+    "min_wer_percent": 13.341443633414437,
+    "max_wer": 0.25785714285714284,
+    "max_wer_percent": 25.785714285714285
+  },
+  "corpus_error_counts": {
+    "reference_words": 27404,
+    "hypothesis_words": 25824,
+    "hits": 23258,
+    "substitutions": 1760,
+    "deletions": 2386,
+    "insertions": 806,
+    "total_errors": 4952
+  },
+  "corpus_secondary_metrics": {
+    "mer": 0.17554058844381426,
+    "wil": 0.23562361643855934
+  },
+  "timing": {
+    "total_inference_seconds": 418.1869589029993,
+    "mean_real_time_factor": 0.04520185614686853,
+    "median_real_time_factor": 0.0425030705241298
+  },
+  "reporting_policy": {
+    "all_17_cases_retained": true,
+    "failures_silently_excluded": false,
+    "primary_metric": "corpus WER"
+  },
+  "evidence_hashes": {
+    "lock_manifest_sha256": "a25d8ff759a743ca2a2654c2cca2e2cb534b9f9b50caca0ed831e989e1fd66ef",
+    "evaluation_protocol_sha256": "f9092ec7c85bd851bb86bf21d0d34b44a431e13d67205f37569c9a89aeec5225",
+    "runner_freeze_sha256": "8e452a9e8ffc042d745cde0e2488975bb8cd00ff1ad5ffaf4a3550f46679e108",
+    "run_manifest_sha256": "d24a3046e35b94c65601e90ca8ff01fe1dd00a687e9fe0d7435efe0b22c5a95e",
+    "inference_manifest_sha256": "89a1ef63825a2a8558b912985ed826abf06405c5d34b0eaab8909649953d493e"
+  }
+}

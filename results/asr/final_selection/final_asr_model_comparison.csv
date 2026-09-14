@@ -1,0 +1,4 @@
+model,corpus_wer_percent,overall_clinical_fact_recall_percent,critical_fact_recall_percent,negation_recall_percent,numerical_temporal_recall_percent,medication_allergy_recall_percent,assessment_plan_recall_percent,critical_omissions,average_rtf,final_rank
+Whisper Large-v3,16.31,95.33,97.65,84.0,100.0,90.91,90.32,2,0.0456,1
+Qwen3-ASR-1.7B,31.73,88.0,88.24,72.0,91.67,63.64,90.32,10,0.078,2
+Google MedASR,64.41,67.33,75.29,24.0,83.33,63.64,83.87,21,0.0126,3

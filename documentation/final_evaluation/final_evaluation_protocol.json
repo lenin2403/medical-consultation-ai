@@ -1,0 +1,205 @@
+{
+  "protocol_name": "PRI-MOCK57 Final Held-Out Evaluation",
+  "created_at": "2026-09-12T16:50:36.303603",
+  "evaluation_status": "FROZEN BEFORE FINAL-TEST INFERENCE",
+  "dataset": {
+    "name": "PRI-MOCK57",
+    "total_consultations": 57,
+    "training_optimisation": 32,
+    "internal_validation": 8,
+    "held_out_final_test": 17,
+    "final_test_ids": [
+      "day1_consultation03",
+      "day1_consultation04",
+      "day1_consultation08",
+      "day1_consultation09",
+      "day1_consultation10",
+      "day1_consultation11",
+      "day2_consultation02",
+      "day2_consultation03",
+      "day2_consultation04",
+      "day2_consultation06",
+      "day2_consultation07",
+      "day3_consultation08",
+      "day4_consultation07",
+      "day5_consultation01",
+      "day5_consultation05",
+      "day5_consultation06",
+      "day5_consultation09"
+    ]
+  },
+  "data_leakage_policy": {
+    "final_test_used_for_model_selection": false,
+    "final_test_used_for_prompt_tuning": false,
+    "final_test_used_for_ui_development": false,
+    "final_test_used_for_validation_rule_tuning": false,
+    "allowed_after_unblinding": [
+      "run frozen inference",
+      "calculate predefined metrics",
+      "perform predefined manual error review",
+      "describe limitations"
+    ],
+    "not_allowed_after_unblinding": [
+      "change ASR settings based on test results",
+      "change extraction prompt based on test results",
+      "change SOAP prompt based on test results",
+      "change model choice based on test results",
+      "change validation thresholds based on test results",
+      "rerun modified pipeline and report it as the same final test"
+    ]
+  },
+  "selected_system": {
+    "asr": {
+      "model": "Whisper Large-v3",
+      "implementation": "faster-whisper",
+      "language": "en",
+      "compute_type": "float16",
+      "beam_size": 5,
+      "vad_filter": true,
+      "word_timestamps": true,
+      "condition_on_previous_text": true
+    },
+    "clinical_information_extraction": {
+      "model": "Qwen3-8B",
+      "strategy": "evidence-grounded structured clinical fact extraction",
+      "safety_principle": "facts must be supported by consultation transcript evidence"
+    },
+    "record_generation": {
+      "format": "SOAP",
+      "model": "Qwen3-8B",
+      "input": "reviewed/validated clinical facts",
+      "unsupported_content_policy": "do not invent undocumented clinical information"
+    },
+    "human_review": {
+      "transcript_editing": true,
+      "clinical_fact_editing": true,
+      "soap_editing": true,
+      "correction_logging": true,
+      "approval_required": true
+    },
+    "exports": [
+      "PDF",
+      "JSON"
+    ]
+  },
+  "asr_evaluation": {
+    "primary_metric": "corpus WER",
+    "secondary_metrics": [
+      "macro WER",
+      "median WER",
+      "WER range",
+      "substitutions",
+      "deletions",
+      "insertions",
+      "MER",
+      "WIL",
+      "content-normalized WER",
+      "real-time factor",
+      "processing time"
+    ],
+    "reference": "merged PRI-MOCK57 manual doctor + patient transcript",
+    "primary_reporting_rule": "standard WER remains the primary ASR metric",
+    "content_normalized_reporting_rule": "reported only as secondary sensitivity analysis",
+    "clinical_error_review": [
+      "negations",
+      "medications",
+      "symptoms",
+      "diagnoses or assessments",
+      "numbers and temporal expressions",
+      "follow-up or management instructions"
+    ]
+  },
+  "clinical_extraction_evaluation": {
+    "unit": "clinical fact",
+    "metrics": [
+      "true positives",
+      "false positives",
+      "false negatives",
+      "precision",
+      "recall",
+      "F1",
+      "evidence grounding rate",
+      "unsupported fact count",
+      "hallucination rate"
+    ],
+    "manual_review_rules": {
+      "true_positive": "extracted fact is clinically supported by the reference consultation",
+      "false_positive": "extracted clinical fact is not supported by the reference consultation",
+      "false_negative": "clinically relevant reference fact was not extracted",
+      "evidence_mismatch": "fact is supported, but automatic quote matching fails because wording was normalized or paraphrased",
+      "hallucination": "clinical claim has no support in the consultation"
+    },
+    "important_categories": [
+      "presenting complaint",
+      "symptoms",
+      "temporal details",
+      "medical history",
+      "medications",
+      "allergies",
+      "negated findings",
+      "assessment",
+      "plan",
+      "follow-up",
+      "safety-netting"
+    ]
+  },
+  "soap_evaluation": {
+    "sections": [
+      "subjective",
+      "objective",
+      "assessment",
+      "plan"
+    ],
+    "metrics": [
+      "clinical completeness",
+      "section placement accuracy",
+      "source-fact traceability",
+      "unsupported statement count",
+      "hallucination rate"
+    ],
+    "rules": {
+      "subjective": "patient-reported symptoms, history, medication and relevant history",
+      "objective": "only explicit objective measurements, examination or test results",
+      "assessment": "only supported clinician assessment or diagnosis information",
+      "plan": "supported treatment, investigation, follow-up, referral or safety-netting",
+      "missing_section": "empty / not documented is preferred over fabrication"
+    }
+  },
+  "system_evaluation": {
+    "metrics": [
+      "end-to-end pipeline completion",
+      "ASR processing time",
+      "LLM extraction time",
+      "SOAP generation time",
+      "review correction count",
+      "approval success",
+      "PDF export success",
+      "JSON export success"
+    ],
+    "qualitative_checks": [
+      "transcript remains editable",
+      "AI facts remain separate from reviewed facts",
+      "AI SOAP remains separate from reviewed SOAP",
+      "approval is blocked until review files exist",
+      "approved record is immutable snapshot",
+      "prototype safety notice is visible"
+    ]
+  },
+  "reporting_policy": {
+    "report_all_17_cases": true,
+    "exclude_failed_cases": false,
+    "failed_case_policy": "retain failed cases and report failure explicitly",
+    "manual_error_review": "allowed for classification and interpretation, not model tuning",
+    "limitations_must_be_reported": true
+  },
+  "frozen_system": {
+    "freeze_directory": "documentation/project_freezes/pre_final_evaluation_20260912_162956",
+    "freeze_manifest_sha256": "7cd699b04408a5ed04251294eebf4ed3e7def734d214de421c5068fb1c199010",
+    "core_code_hashes": {
+      "app.py": "b9e7e24a6f2ad64a5fab3349bf5322b1e437179091c035820c1a7bf162b2339e",
+      "live_pipeline.py": "9ad18df1647e05676ead3e11e4039db9b59f910c1d195376b8cccf05d780c58b",
+      "live_clinical_pipeline.py": "dd45348d63615f21e172cacb00ec4b994465cc92e6b5b04a93bd72624778b56a",
+      "live_export.py": "47cfbcec6bd6a0b4881fbf1297ba041961bd59ba42458b657b0380c2736fe00f"
+    }
+  }
+}

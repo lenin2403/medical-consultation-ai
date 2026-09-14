@@ -1,0 +1,41 @@
+{
+  "stage": "SOAP generation and human-in-the-loop review",
+  "status": "FINAL",
+  "selected_model": "Qwen/Qwen3-8B",
+  "input": "Validated canonical clinical facts",
+  "raw_qwen_soap_results": {
+    "consultations": 10,
+    "valid_json": "10/10",
+    "average_source_fact_coverage_percent": 91.79,
+    "missing_source_facts": 16,
+    "wrong_section_references": 13,
+    "average_traceability_percent": 98.9,
+    "total_generation_seconds": 99.97
+  },
+  "deterministic_postprocessing_results": {
+    "average_final_source_fact_coverage_percent": 100.0,
+    "restored_omitted_facts": 16,
+    "removed_invalid_soap_statements": 2,
+    "remaining_missing_facts": 0,
+    "remaining_wrong_section_references": 0,
+    "remaining_invalid_fact_ids": 0,
+    "structural_validation": "PASS"
+  },
+  "hitl_workflow_test": {
+    "original_transcript_preserved": true,
+    "generated_facts_preserved": true,
+    "generated_soap_preserved": true,
+    "correction_log_created": true,
+    "reviewer_edit_logged": true,
+    "final_record_saved_separately": true,
+    "workflow_test_passed": true,
+    "clinical_approval": false
+  },
+  "important_limitations": [
+    "100 percent source-fact coverage means every validated upstream fact is represented structurally; it does not mean every clinical statement is medically correct.",
+    "The HITL approval test used a simulated workflow reviewer and was not approval by a licensed clinician.",
+    "Clinical correctness still depends on upstream ASR and clinical-fact extraction quality.",
+    "Negation recall in the upstream clinical extraction stage was 44 percent, which supports the need for mandatory human review."
+  ],
+  "final_pipeline": "Audio -> Whisper Large-v3 -> Qwen3-8B clinical extraction -> deterministic extraction validation -> Qwen3-8B SOAP draft -> deterministic SOAP validation -> human review -> approved record"
+}

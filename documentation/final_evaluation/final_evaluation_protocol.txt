@@ -1,0 +1,83 @@
+FINAL EVALUATION PROTOCOL
+=========================
+
+Dataset
+-------
+PRI-MOCK57: 57 consultations
+
+Training / optimisation: 32
+Internal validation: 8
+Held-out final test: 17
+
+Final-test status:
+FROZEN BEFORE INFERENCE
+
+Selected pipeline
+-----------------
+ASR:
+Whisper Large-v3
+faster-whisper
+float16
+English
+beam size = 5
+VAD = True
+word timestamps = True
+condition_on_previous_text = True
+
+Clinical extraction:
+Qwen3-8B
+Evidence-grounded structured clinical facts
+
+Record:
+SOAP
+
+Human-in-the-loop:
+Transcript review
+Clinical fact review
+SOAP review
+Correction logging
+Approval gate
+
+Exports:
+PDF
+JSON
+
+Primary ASR metric
+------------------
+Corpus WER
+
+Secondary ASR metrics
+---------------------
+Macro / median WER
+Substitution / deletion / insertion counts
+MER
+WIL
+Content-normalized WER
+Latency
+RTF
+
+Clinical extraction
+-------------------
+Precision
+Recall
+F1
+Evidence grounding
+Unsupported facts
+Hallucination rate
+
+SOAP
+----
+Clinical completeness
+Section accuracy
+Source-fact traceability
+Unsupported statements
+Hallucination rate
+
+Final-test policy
+-----------------
+All 17 cases must be reported.
+Failed cases may not be silently excluded.
+Manual review may classify errors,
+but may not be used to tune the frozen system.
+
+No test-driven model, prompt or validation changes are allowed.

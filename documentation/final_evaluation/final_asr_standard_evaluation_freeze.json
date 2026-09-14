@@ -1,0 +1,314 @@
+{
+  "created_at": "2026-09-12T21:18:13.818988",
+  "evaluation": "Whisper Large-v3 final held-out standard ASR evaluation",
+  "cases": 17,
+  "status": "COMPLETE",
+  "summary": {
+    "evaluation_name": "PRI-MOCK57 held-out final ASR evaluation",
+    "created_at": "2026-09-12T21:17:06.572317",
+    "model": "Whisper Large-v3",
+    "implementation": "faster-whisper",
+    "jiwer_version": "4.0.0",
+    "locked_final_test_cases": 17,
+    "successfully_scored_cases": 17,
+    "failed_or_missing_cases": 0,
+    "primary_metrics": {
+      "corpus_wer": 0.18070354692745585,
+      "corpus_wer_percent": 18.070354692745585,
+      "macro_wer": 0.18234303390469045,
+      "macro_wer_percent": 18.234303390469044,
+      "median_wer": 0.18029350104821804,
+      "median_wer_percent": 18.029350104821802,
+      "min_wer": 0.13341443633414438,
+      "min_wer_percent": 13.341443633414437,
+      "max_wer": 0.25785714285714284,
+      "max_wer_percent": 25.785714285714285
+    },
+    "corpus_error_counts": {
+      "reference_words": 27404,
+      "hypothesis_words": 25824,
+      "hits": 23258,
+      "substitutions": 1760,
+      "deletions": 2386,
+      "insertions": 806,
+      "total_errors": 4952
+    },
+    "corpus_secondary_metrics": {
+      "mer": 0.17554058844381426,
+      "wil": 0.23562361643855934
+    },
+    "timing": {
+      "total_inference_seconds": 418.1869589029993,
+      "mean_real_time_factor": 0.04520185614686853,
+      "median_real_time_factor": 0.0425030705241298
+    },
+    "reporting_policy": {
+      "all_17_cases_retained": true,
+      "failures_silently_excluded": false,
+      "primary_metric": "corpus WER"
+    },
+    "evidence_hashes": {
+      "lock_manifest_sha256": "a25d8ff759a743ca2a2654c2cca2e2cb534b9f9b50caca0ed831e989e1fd66ef",
+      "evaluation_protocol_sha256": "f9092ec7c85bd851bb86bf21d0d34b44a431e13d67205f37569c9a89aeec5225",
+      "runner_freeze_sha256": "8e452a9e8ffc042d745cde0e2488975bb8cd00ff1ad5ffaf4a3550f46679e108",
+      "run_manifest_sha256": "d24a3046e35b94c65601e90ca8ff01fe1dd00a687e9fe0d7435efe0b22c5a95e",
+      "inference_manifest_sha256": "89a1ef63825a2a8558b912985ed826abf06405c5d34b0eaab8909649953d493e"
+    }
+  },
+  "frozen_model": "Whisper Large-v3",
+  "engine": "faster-whisper 1.2.1",
+  "device": "CUDA",
+  "compute_type": "float16",
+  "beam_size": 5,
+  "vad": true,
+  "word_timestamps": true,
+  "condition_on_previous_text": true,
+  "infrastructure_note": "Initial Data Lab attempt produced zero hypotheses because libcublas.so.12 was not visible to CTranslate2. The existing CUDA library path was exposed through LD_LIBRARY_PATH. No model, decoding, data, or scoring configuration was changed.",
+  "result_files": [
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/final_test_asr_per_consultation.csv",
+      "size_bytes": 5483,
+      "sha256": "3ffcddf3fcbc76ac2b111e20bf56413d308e556cc0d713a1a0bdb8fc2694c263"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/final_test_asr_summary.json",
+      "size_bytes": 1884,
+      "sha256": "89aabb2bc545d03b03e41a8914cc9b26dd7b1151eef496c2240777f65f5cff4b"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/final_test_asr_summary.txt",
+      "size_bytes": 860,
+      "sha256": "242abdfdcc981bc834df618e8528127a7c10abe61e5d73641d086c4b19712fbf"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/final_test_inference_manifest.csv",
+      "size_bytes": 3854,
+      "sha256": "89a1ef63825a2a8558b912985ed826abf06405c5d34b0eaab8909649953d493e"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/final_test_run_manifest.json",
+      "size_bytes": 864,
+      "sha256": "d24a3046e35b94c65601e90ca8ff01fe1dd00a687e9fe0d7435efe0b22c5a95e"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation03_segments.json",
+      "size_bytes": 244745,
+      "sha256": "5984b0ff350855144f533e3167bca0524b661e6988f2adab36804d691a0c7309"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation04_segments.json",
+      "size_bytes": 239201,
+      "sha256": "3969da009ac61ceee47e7604b6f712b5235036dcbcf4d4c2d2ccaeda3de8671f"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation08_segments.json",
+      "size_bytes": 170614,
+      "sha256": "fb153e591ae50cf1b3f6213cb6238df0c7091413eda95fcf81bbdb50fb825ea6"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation09_segments.json",
+      "size_bytes": 228727,
+      "sha256": "b6e9704bad1aa592b131573e37bb8c0f3a39ca1903a5f96209aec94f4e81c381"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation10_segments.json",
+      "size_bytes": 252024,
+      "sha256": "474e44a47ae9ce6840ed9f5e301bcfaed093d7df4ae308448827f1a1ee1a6262"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day1_consultation11_segments.json",
+      "size_bytes": 348440,
+      "sha256": "b9cffeee75be52d2d4db33554a6451746aec0cfe5b4af73416962cdc9c72b67b"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day2_consultation02_segments.json",
+      "size_bytes": 236389,
+      "sha256": "db3d9f9701aa18d14a210ae616a91c40e2e5b97c8ddbe7f2fb9a7776a9e15bcb"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day2_consultation03_segments.json",
+      "size_bytes": 202636,
+      "sha256": "73829ad2164d0c3c1f43703965506fe65143b3b6e2bb736939b30175f707add7"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day2_consultation04_segments.json",
+      "size_bytes": 256232,
+      "sha256": "d35437251e789fc3e672dad390c968abfaca51d3c419eabd762012bc30748785"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day2_consultation06_segments.json",
+      "size_bytes": 270807,
+      "sha256": "498df804c234c17c936860e0026687b6a4facace1e9be8798debade196651785"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day2_consultation07_segments.json",
+      "size_bytes": 176932,
+      "sha256": "67c0af60d3b023c3d403ea013c4189198b5726dd1d2bcf0922a082b0b31d4fa7"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day3_consultation08_segments.json",
+      "size_bytes": 131737,
+      "sha256": "ab4eea20b16c0b538423e478c2f24a303d4a3b03d830049574a955dab1d5cf49"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day4_consultation07_segments.json",
+      "size_bytes": 261495,
+      "sha256": "e82d631555bad4a128d93968a54fdd790b79349464f671939d1ecc9bc93c3145"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day5_consultation01_segments.json",
+      "size_bytes": 177278,
+      "sha256": "6431065d03c1e9db0b02d4211b1f007f3c933332926ef1c8afc00843aa95397f"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day5_consultation05_segments.json",
+      "size_bytes": 128649,
+      "sha256": "7fd88954e682a7a41b4717a498935de446b5ddf11a6b2991c976bf7f867af61a"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day5_consultation06_segments.json",
+      "size_bytes": 215187,
+      "sha256": "bc5973595b0851fd425d27feeea3e8c0c7924c10a2594914a6849267cc76cec0"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/segments/day5_consultation09_segments.json",
+      "size_bytes": 207648,
+      "sha256": "3890d481b887375b9470a24333a61d1f7d301adfe5ba2d8b619b23e3dfbbfd98"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation03_transcript.txt",
+      "size_bytes": 8323,
+      "sha256": "77571bde6f41332f820d8669a7a527bed7380b44c11ffbfb7b44d86ebb7f702f"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation04_transcript.txt",
+      "size_bytes": 7931,
+      "sha256": "33969bdb24faffbfe1fce3a442418abdebb7860b0a77f5fac0b0a572afd2a8c8"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation08_transcript.txt",
+      "size_bytes": 6005,
+      "sha256": "eee6a848ac12cb42a15fbccdf395f90188c27a096fd85105e03157de24c2294e"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation09_transcript.txt",
+      "size_bytes": 8048,
+      "sha256": "8511a9efc6286feda0270c8bb631cc54057f46463f678c3e9e148d097fd6c0d6"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation10_transcript.txt",
+      "size_bytes": 8415,
+      "sha256": "07dbe5002f23f39d2c4b91b54b00a4ed500653f52f3908a7fab02511ca9783f6"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day1_consultation11_transcript.txt",
+      "size_bytes": 11636,
+      "sha256": "80501f6b1dd382d737505a02cb27b98b6e2455f992a1eeff9d98c6e844f77dfe"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day2_consultation02_transcript.txt",
+      "size_bytes": 7684,
+      "sha256": "0e5f5cc866fc80ad9728cc497bf54617a0a5aa2b9a334129a99b060c82d72730"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day2_consultation03_transcript.txt",
+      "size_bytes": 6957,
+      "sha256": "e06313fd2e82355728052477c037e0830daa9a2a7bc3723861e50a1168d3b586"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day2_consultation04_transcript.txt",
+      "size_bytes": 8808,
+      "sha256": "651d79ef0f6032c8bb4683cc04c02dc528106798060df26c8ed80d7874780436"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day2_consultation06_transcript.txt",
+      "size_bytes": 9262,
+      "sha256": "c7514ec396d186cdf4c83fd30625b802f7c71b5c255c296e5110b3befd67bf10"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day2_consultation07_transcript.txt",
+      "size_bytes": 6212,
+      "sha256": "4fdfa59c2449736ea939c1a241891df8a7732eae7745c715adaaa3249e2e9c7d"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day3_consultation08_transcript.txt",
+      "size_bytes": 4575,
+      "sha256": "5628d61d2a2ffb5bb693bdafb034b576270f97ceb07d596cf48711a0ea87fb21"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day4_consultation07_transcript.txt",
+      "size_bytes": 8462,
+      "sha256": "d0825c048e28a5736dcece986676cf564553a03ca41236afc8f493e3e6463f76"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day5_consultation01_transcript.txt",
+      "size_bytes": 6217,
+      "sha256": "0fad8cff3e1e50a746c64006eed482cdcf62eee045ac47ac0c5f08f76663bd1a"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day5_consultation05_transcript.txt",
+      "size_bytes": 4246,
+      "sha256": "9fba3f7714b686d52031f2eff04720f112641aaa1642bec46a313ca7b4f03516"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day5_consultation06_transcript.txt",
+      "size_bytes": 7528,
+      "sha256": "5c30c230332b0b6c17565a979f50afb0d56b0ec12b96a1738bf9b6b1a2ce32ad"
+    },
+    {
+      "relative_path": "results/asr/whisper_large_v3/final_test/transcripts/day5_consultation09_transcript.txt",
+      "size_bytes": 7184,
+      "sha256": "7654be60d205ad3a97a0872aa46281885977142c5c7037d6ec8bc8e59acd8de3"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/final_test_lock_manifest.json",
+      "size_bytes": 791,
+      "sha256": "a25d8ff759a743ca2a2654c2cca2e2cb534b9f9b50caca0ed831e989e1fd66ef"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/final_evaluation_protocol.json",
+      "size_bytes": 6874,
+      "sha256": "f9092ec7c85bd851bb86bf21d0d34b44a431e13d67205f37569c9a89aeec5225"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/final_whisper_runner_freeze.json",
+      "size_bytes": 741,
+      "sha256": "8e452a9e8ffc042d745cde0e2488975bb8cd00ff1ad5ffaf4a3550f46679e108"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/final_asr_scoring_freeze.json",
+      "size_bytes": 772,
+      "sha256": "1996addf591ab3fd602f7499e04a019b6f07d349918202c6d270e8ec0603f846"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/datalab_transfer_manifest.json",
+      "size_bytes": 13811,
+      "sha256": "e86df5b2aa547e9b49a2c64b0fefa439d826d59a2b1fa76b680061491c010241"
+    },
+    {
+      "relative_path": "documentation/final_evaluation/datalab_cuda_runtime_fix.json",
+      "size_bytes": 934,
+      "sha256": "95508da4e1a055153cdde4fe2f9d23a157396f168263722171bf23aa5d344754"
+    },
+    {
+      "relative_path": "data/prepared/manifests/final_test_preparation_manifest.csv",
+      "size_bytes": 11744,
+      "sha256": "9dc695b486be5727a4ac3754954c3dab51e6faa0482cde2de20a6a8bd659770a"
+    },
+    {
+      "relative_path": "data/prepared/manifests/final_test_preparation_manifest.json",
+      "size_bytes": 21850,
+      "sha256": "d66e1afff1d35e5158f6a949acfebcd2644042dcc97bcf7690f09cd745c75026"
+    },
+    {
+      "relative_path": "scripts/final_evaluation/run_final_whisper.py",
+      "size_bytes": 14866,
+      "sha256": "a629d7373607ce8c1138667d8e80909b340a84811e3ff6f35d45ac7b16d5abce"
+    },
+    {
+      "relative_path": "scripts/final_evaluation/score_final_whisper.py",
+      "size_bytes": 19054,
+      "sha256": "07f75a9e674dfa0ff094322690c3b59894fe6b2136bf70365cc9a75bdcd9c722"
+    }
+  ]
+}

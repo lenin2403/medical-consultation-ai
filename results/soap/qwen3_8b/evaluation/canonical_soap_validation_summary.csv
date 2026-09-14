@@ -1,0 +1,11 @@
+consultation_id,source_facts,removed_invalid_statements,restored_omitted_facts,final_fact_coverage_percent,final_missing_facts,final_wrong_section_references,final_invalid_fact_ids
+day1_consultation01,20,0,0,100.0,0,0,0
+day1_consultation07,20,0,0,100.0,0,0,0
+day2_consultation01,20,0,0,100.0,0,0,0
+day2_consultation05,20,0,0,100.0,0,0,0
+day3_consultation06,19,0,8,100.0,0,0,0
+day3_consultation09,20,1,0,100.0,0,0,0
+day4_consultation03,20,0,7,100.0,0,0,0
+day4_consultation10,19,0,0,100.0,0,0,0
+day5_consultation03,20,0,1,100.0,0,0,0
+day5_consultation12,20,1,0,100.0,0,0,0

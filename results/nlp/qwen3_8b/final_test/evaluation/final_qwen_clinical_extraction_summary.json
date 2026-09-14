@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-09-13T10:43:39.621637",
+  "model": "Qwen/Qwen3-8B",
+  "evaluation_configuration": "bfloat16",
+  "final_test_consultations": 17,
+  "structured_output": {
+    "valid_json": 16,
+    "failed_json": 1,
+    "success_rate_percent": 94.12,
+    "failed_case": "day2_consultation03",
+    "failure_reason": "Generation reached the 2200-token limit, entered repetitive output and terminated before producing valid JSON."
+  },
+  "runtime": {
+    "total_generation_seconds": 495.2728,
+    "mean_generation_seconds": 29.1337,
+    "batch_wall_seconds": 643.585
+  },
+  "canonical_output": {
+    "total_canonical_facts": 308,
+    "exact_transcript_evidence_spans": 308,
+    "exact_evidence_grounding_percent": 100.0,
+    "important_note": "Exact evidence-span grounding is enforced deterministically and does not by itself guarantee correct semantic interpretation."
+  },
+  "manual_clinical_evaluation": {
+    "scope": "Six representative held-out consultations covering the observed ASR WER range.",
+    "extracted_facts_reviewed": 117,
+    "manually_curated_reference_facts": 156,
+    "true_positives": 92,
+    "false_positives": 25,
+    "false_negatives": 64,
+    "precision_percent": 78.63,
+    "recall_percent": 58.97,
+    "f1_percent": 67.4,
+    "metric_interpretation": "These are conservative clinician-note agreement metrics. PRI-MOCK57 clinician notes are not exhaustive transcripts; therefore some transcript-supported extra facts may count as false positives in the note-agreement calculation."
+  },
+  "manual_semantic_error_review": {
+    "clinically_meaningful_errors": 2,
+    "wrong_polarity_errors": 1,
+    "partially_unsupported_overgeneralizations": 1,
+    "fully_fabricated_hallucinations": 0,
+    "hallucination_rate_percent_in_reviewed_subset": 0.0,
+    "examples": [
+      {
+        "consultation_id": "day2_consultation07",
+        "type": "wrong_polarity",
+        "description": "Nausea was marked absent although the patient reported nausea; vomiting was the symptom that was denied."
+      },
+      {
+        "consultation_id": "day5_consultation06",
+        "type": "unsupported_overgeneralization",
+        "description": "The extraction combined blood in stool and urine as absent although only the stool negation was supported and urine colour was uncertain."
+      }
+    ]
+  },
+  "overall_interpretation": "Qwen3-8B generally produced evidence-grounded structured clinical facts but showed incomplete clinical coverage, particularly for negations, fine-grained details and some management items. Human review remains necessary before approval."
+}

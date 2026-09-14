@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-09-12T17:10:04.469094",
+  "purpose": "frozen held-out Whisper ASR scoring script",
+  "script_path": "scripts/final_evaluation/score_final_whisper.py",
+  "script_sha256": "07f75a9e674dfa0ff094322690c3b59894fe6b2136bf70365cc9a75bdcd9c722",
+  "primary_metric": "corpus WER",
+  "secondary_metrics": [
+    "macro WER",
+    "median WER",
+    "WER range",
+    "substitutions",
+    "deletions",
+    "insertions",
+    "MER",
+    "WIL",
+    "processing time",
+    "real-time factor"
+  ],
+  "normalization": "Unicode NFKC; lowercase; punctuation and symbols replaced with spaces; whitespace collapsed",
+  "jiwer_version": "4.0.0",
+  "report_all_17_cases": true,
+  "current_status": "prepared; not executed because Whisper final inference does not yet exist"
+}

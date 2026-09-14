@@ -1,0 +1,50 @@
+PRI-MOCK57 HELD-OUT FINAL ASR EVALUATION
+========================================
+
+Model
+-----
+Whisper Large-v3
+faster-whisper
+
+Cases
+-----
+Locked final-test cases: 17
+Successfully scored: 17
+Failed/missing: 0
+
+Primary result
+--------------
+Corpus WER: 18.07%
+
+Case-level WER
+--------------
+Macro WER: 18.23%
+Median WER: 18.03%
+Minimum WER: 13.34%
+Maximum WER: 25.79%
+
+Corpus counts
+-------------
+Reference words: 27404
+Hypothesis words: 25824
+Hits: 23258
+Substitutions: 1760
+Deletions: 2386
+Insertions: 806
+
+Secondary error metrics
+-----------------------
+MER: 0.1755
+WIL: 0.2356
+
+Timing
+------
+Total inference seconds: 418.1869589029993
+Mean RTF: 0.04520185614686853
+Median RTF: 0.0425030705241298
+
+Reporting policy
+----------------
+All 17 locked cases remain visible.
+Failed or missing cases are not silently excluded.
+Corpus WER is the primary ASR metric.

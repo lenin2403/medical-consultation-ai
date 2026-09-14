@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-09-13T09:14:11.496646",
+  "stage": "final_held_out_qwen3_8b_clinical_extraction",
+  "status": "FROZEN_BEFORE_INFERENCE",
+  "model": "Qwen/Qwen3-8B",
+  "evaluation_configuration": {
+    "dtype": "bfloat16",
+    "device_map": "auto",
+    "thinking_enabled": false,
+    "do_sample": false,
+    "max_new_tokens": 2200,
+    "target_fact_range": "15-20",
+    "quote_repair_similarity_threshold": 0.78
+  },
+  "input": "17 frozen held-out Whisper Large-v3 transcripts",
+  "labels_accessed_by_runner": false,
+  "clinical_notes_accessed_by_runner": false,
+  "consultation_checklists_accessed_by_runner": false,
+  "runner": "scripts/final_evaluation/run_final_qwen_extraction.py",
+  "runner_sha256": "585e22e89be9e50672e71fd92521b9f5cbae6048ec1877e775107cc30680b1d1",
+  "final_cases": [
+    "day1_consultation03",
+    "day1_consultation04",
+    "day1_consultation08",
+    "day1_consultation09",
+    "day1_consultation10",
+    "day1_consultation11",
+    "day2_consultation02",
+    "day2_consultation03",
+    "day2_consultation04",
+    "day2_consultation06",
+    "day2_consultation07",
+    "day3_consultation08",
+    "day4_consultation07",
+    "day5_consultation01",
+    "day5_consultation05",
+    "day5_consultation06",
+    "day5_consultation09"
+  ]
+}

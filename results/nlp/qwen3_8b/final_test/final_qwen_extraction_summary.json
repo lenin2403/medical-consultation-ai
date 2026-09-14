@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "evaluation_configuration": "bfloat16",
+  "thinking_enabled": false,
+  "do_sample": false,
+  "max_new_tokens": 2200,
+  "consultations": 17,
+  "valid_json": 16,
+  "total_raw_facts": 308,
+  "total_canonical_facts": 308,
+  "total_generation_seconds": 495.2728,
+  "mean_generation_seconds": 29.13369411764706,
+  "batch_wall_seconds": 643.585
+}

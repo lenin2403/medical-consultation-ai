@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-09-13T08:35:20.726569",
+  "model": "Whisper Large-v3",
+  "final_test_cases": 17,
+  "representative_cases_manually_reviewed": 6,
+  "selection_policy": "Deterministic coverage across the held-out WER range.",
+  "candidate_alignment_regions_reviewed": 30,
+  "clinical_findings": {
+    "clinically_relevant_examples": 2,
+    "medication_name_errors": 1,
+    "negative_symptom_omissions": 1,
+    "confirmed_dangerous_negation_reversals": 0,
+    "confirmed_treatment_inversions": 0
+  },
+  "important_examples": [
+    {
+      "consultation_id": "day5_consultation06",
+      "category": "medication_error",
+      "reference": "ibuprofen",
+      "whisper": "niprine",
+      "interpretation": "Medication lexical identity was mistranscribed."
+    },
+    {
+      "consultation_id": "day1_consultation08",
+      "category": "negative_symptom_omission",
+      "reference": "I don't have any spots",
+      "whisper": "statement omitted",
+      "interpretation": "One negative skin finding was omitted while nearby fever and sweating negations were preserved."
+    }
+  ],
+  "report_interpretation": "Most reviewed ASR mismatches were orthographic, filler-related or clinically insignificant. Clinically relevant errors remained, including a medication-name substitution and an omitted negative symptom statement. Human review therefore remains necessary.",
+  "important_reporting_note": "The two clinically relevant examples are findings from a targeted representative review and must not be presented as an exhaustive clinical error rate for all 17 consultations."
+}

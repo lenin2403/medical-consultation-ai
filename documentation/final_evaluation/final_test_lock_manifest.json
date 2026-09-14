@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-09-12T16:42:54.852357",
+  "dataset": "PRI-MOCK57",
+  "source_split_file": "data/splits/primock57_experimental_split_final.csv",
+  "protocol": {
+    "training": 32,
+    "validation": 8,
+    "final_test": 17
+  },
+  "final_test_status": "LOCKED - NO INFERENCE PERFORMED",
+  "final_test_consultation_ids": [
+    "day1_consultation03",
+    "day1_consultation04",
+    "day1_consultation08",
+    "day1_consultation09",
+    "day1_consultation10",
+    "day1_consultation11",
+    "day2_consultation02",
+    "day2_consultation03",
+    "day2_consultation04",
+    "day2_consultation06",
+    "day2_consultation07",
+    "day3_consultation08",
+    "day4_consultation07",
+    "day5_consultation01",
+    "day5_consultation05",
+    "day5_consultation06",
+    "day5_consultation09"
+  ]
+}
