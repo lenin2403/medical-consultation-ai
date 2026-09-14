@@ -164,3 +164,90 @@ medical-consultation-ai/
 ├── Dockerfile
 ├── requirements-frontend.txt
 └── README.md
+```
+
+## Deployment
+
+The GPU backend was successfully tested on the university Data Lab.
+
+Testing confirmed:
+
+- CUDA was available
+- NVIDIA H200 NVL GPU was available
+- FastAPI backend was running successfully
+- Public Cloudflare backend health request returned HTTP 200
+- Frontend Docker image was built successfully through GitHub Actions
+
+The frontend Docker image is available from GitHub Container Registry:
+
+```text
+ghcr.io/lenin2403/medical-consultation-ai-frontend:latest
+```
+
+Final publication through Portainer could not be completed because the university Data Lab account returned:
+
+```text
+403 Forbidden
+You do not have permission to access JupyterHub service portainer
+```
+
+The remaining Portainer publication step depends on university account permission and not on application implementation.
+
+## Running the Frontend
+
+Install the frontend requirements:
+
+```bash
+pip install -r requirements-frontend.txt
+```
+
+Run the Streamlit application:
+
+```bash
+streamlit run app/app.py
+```
+
+## Running the GPU Backend
+
+The GPU backend is implemented in:
+
+```text
+app/gpu_backend_api.py
+```
+
+The backend provides functions for:
+
+- Backend health checking
+- Speech transcription
+- Clinical fact extraction
+- SOAP generation
+
+The main AI models require a CUDA capable GPU environment.
+
+## Deployment Note
+
+The Data Lab GPU backend runs on shared university Compute resources and is not designed to remain active permanently.
+
+For a live demonstration, the GPU backend must first be started on Compute and connected to the frontend.
+
+The final Portainer deployment can be completed when the required university account permission is available.
+
+## Safety
+
+This project is an academic prototype and is not intended for clinical use.
+
+AI generated documentation must be reviewed before final approval.
+
+The system does not independently diagnose patients or provide medical treatment decisions.
+
+## Author
+
+Lenin Carvalho
+
+M.Sc. Applied Data Science and Analytics
+
+SRH Hochschule Heidelberg
+
+Case Study 2
+
+2026
