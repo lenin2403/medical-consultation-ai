@@ -25,9 +25,7 @@ from reportlab.platypus import (
 )
 
 
-PROJECT = Path(
-    "/home/jovyan/Case_Study_2_Medical_Consultation_AI"
-)
+PROJECT = Path(__file__).resolve().parents[1]
 
 
 def _encounter_dir(encounter_id):
